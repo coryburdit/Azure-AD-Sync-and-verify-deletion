@@ -8,9 +8,6 @@
 Import-Module AdSync
 Start-ADSyncSyncCycle -PolicyType Delta
 Set-ExecutionPolicy RemoteSigned
-$UserCredential = Get-Credential
-$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
-Import-PSSession $Session
-Write-host "Enter Address to verify that is deleted."
-$mailbox = Read-Host
+Connect-ExchangeOnline
+$mailbox = Read-Host -Prompt "Enter Address to verify that is deleted."
 Get-Mailbox -SoftDeletedMailbox -identity $mailbox

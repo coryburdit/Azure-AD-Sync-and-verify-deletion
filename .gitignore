@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.json
+*.sqlite
+*.wsuo
+*.lock
+/.vs/Azure-AD-Sync-and-verify-deletion/FileContentIndex
